@@ -1,4 +1,3 @@
-{{#with footer}}
 <footer>
     <hr>
     <br>
@@ -11,13 +10,14 @@
     </div>
     <br>
     <div>
-        <em>copyright by {{../header/name/firstname}} {{../header/name/surname}}</em>
+        {{#with name}}
+        <em>copyright by {{firstname}} {{surname}}</em>
+        {{/with}}
     </div>
 
     <br>
 
     <div>
-        <address>{{../header/address}}</address>
+        <address>{{address}}</address>
     </div>
 </footer>
-{{/with}}
