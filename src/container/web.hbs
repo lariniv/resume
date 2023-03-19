@@ -1,0 +1,60 @@
+<div>
+    {{#with web}}
+    <main>
+        <ul>
+            {{#each languages}}
+            <li>
+                <div>
+                    <strong>{{name}} - {{version}}</strong>
+                </div>
+
+                <div>
+                    {{description}}
+                </div>
+
+                <br>
+                
+                <div>
+                    <em>{{#if elements}} Elements: {{/if}} {{#if properties}} Properties: {{/if}} {{#if functions}} Functions: {{/if}}</em>
+                </div>
+
+                <br>
+
+                
+                {{#if elements}}
+                <div>
+                    <ul>
+                        {{#each elements}}
+                            {{> web_list naming="Elements" minor=attributes }}
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+
+                {{#if properties}}
+                <div>
+                    <ul>
+                        {{#each properties}}
+                            {{> web_list naming="Properties" minor=values }}
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+
+                {{#if functions}}
+                <div>
+                    <ul>
+                        {{#each functions}}
+                            {{> web_list naming="Parameters" minor=parameters }}
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+            </li>
+
+            {{> spliter}}
+            {{/each}}
+        </ul>
+    </main>
+    {{/with}}
+</div>
