@@ -1,0 +1,27 @@
+
+<li>
+    <div>
+        <strong>{{name}}</strong>
+    </div>
+
+    <div>
+        <small>{{description}}</small>
+    </div>
+
+    <br>
+    <div>
+        <i>{{naming}}:</i>
+    </div>
+
+    <ul>
+        {{#each minor}}
+            <li>
+                <div>
+                    {{#if name}} {{name}} {{else}} {{value}} {{/if}} {{#if type}} ({{type}}) {{/if}}- {{description}}
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</li>
+
+<br>
