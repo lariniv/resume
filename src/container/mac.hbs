@@ -1,0 +1,323 @@
+<div>
+    <main>
+        <section>
+            <div>
+                {{> title data=name big=true}}
+                <span>{{description}}</span>
+            </div>
+            
+            <br>
+
+            <div>
+                Price - <b>{{price}}$</b>
+            </div>
+            <div>
+                <span class="badge bg-primary">{{category}}</span>
+            </div>
+
+            <br>
+
+            <a type="button" href="#" class="btn btn-primary btn-small">Buy</a>
+        </section>
+
+        {{> spliter}}
+
+        <section>
+            {{#with features}}
+                {{> title data="Features"}}
+
+                <br>
+
+                <div>
+                     {{#with processor}}
+                        {{> collapse-button targetName="#procList" ariaName="procList"buttonData="Processor"}}
+
+
+                        <br>
+
+                        <div class="collapse" id="procList">
+                            <div class="card card-body">
+                                <div>
+                                    Brand - <b>{{brand}}</b>
+                                </div>
+
+                                <div>
+                                    Model - <b>{{model}}</b>
+                                </div>
+
+                                <div>
+                                    Speed - <b>{{speed}}</b>
+                                </div>
+
+                                <div>
+                                    Cores amount - <b>{{cores}}</b>
+                                </div>
+
+                                <div>
+                                    Cache - <b>{{cache}}</b>
+                                </div>
+                            </div>
+                        </div>
+                    {{/with}}
+                </div>
+               
+                <br>
+
+                <div>
+                    {{#with memory}}
+                        {{> collapse-button targetName="#memoryList" ariaName="memoryList"buttonData="Memory"}}
+
+                        <br>
+
+                        <div class="collapse" id="memoryList">
+                            <div class="card card-body">
+                                <div>
+                                    Type - <b>{{type}}</b>
+                                </div>
+
+                                <div>
+                                    size - <b>{{size}}</b>
+                                </div>
+
+                                <div>
+                                    Speed - <b>{{speed}}</b>
+                                </div>
+
+                            </div>
+                        </div>
+                    {{/with}}
+                </div>                
+
+                <br>
+
+                <div>
+                    {{#with storage}}
+                        {{> collapse-button targetName="#storList" ariaName="storList"buttonData="Storage"}}
+
+
+                        <br>
+
+                        <div class="collapse" id="storList">
+                            <div class="card card-body">
+                                <div>
+                                    Type - <b>{{type}}</b>
+                                </div>
+
+                                <div>
+                                    Size - <b>{{size}}</b>
+                                </div>
+
+                            </div>
+                        </div>
+                    {{/with}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{#with display}}
+                        {{> collapse-button targetName="#disList" ariaName="disList"buttonData="Display"}}
+                        <br>
+
+                        <div class="collapse" id="disList">
+                            <div class="card card-body">
+                                <div>
+                                    Size - <b>{{size}}</b>
+                                </div>
+
+                                <div>
+                                    Resolution - <b>{{resolution}}</b>
+                                </div>
+
+                                <div>
+                                    Technology - <b>{{technology}}</b>
+                                </div>
+
+                                <div>
+                                    Color spaxce - <b>{{color_space}}</b>
+                                </div>
+
+                                <div>
+                                    Brightness - <b>{{brightness}}</b>
+                                </div>
+
+                                <div>
+                                    Refresh rate - <b>{{refresh_rate}}</b>
+                                </div>
+
+                            </div>
+                        </div>
+                    {{/with}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{#with graphics}}
+                        {{> collapse-button targetName="#graphList" ariaName="graphList" buttonData="Graphics"}}
+
+                        <br>
+
+                        <div class="collapse" id="graphList">
+                            <div class="card card-body">
+                                <div>
+                                    Brand - <b>{{brand}}</b>
+                                </div>
+
+                                <div>
+                                    Model - <b>{{model}}</b>
+                                </div>
+
+                                <div>
+                                    Memory - <b>{{memory}}</b>
+                                </div>
+                            </div>
+                        </div>
+                    {{/with}}
+                </div>
+                
+                <br>
+
+                <div>
+                    {{> collapse-button targetName="#portList" ariaName="porLIst" buttonData="Ports"}}
+                    
+                    <br>
+
+                    <div class="collapse" id="portList">
+                        <div class="card card-body">
+                            <ul>
+                                {{#each ports}}
+                                <li>
+                                    <div>
+                                        Port type - <b>{{type}}</b>
+                                    </div>
+                                    <div>
+                                        Port count - <b>{{count}}</b>
+                                    </div>
+                                    {{#if features}}
+                                    <br>
+                                    {{/if}}
+                                    <div>
+                                        Port features:
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            {{#each features}}
+                                            <li><b>{{this}}</b></li>
+                                            {{/each}}
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <br>
+                                {{/each}}
+
+                            </ul>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <br>
+
+                <div>
+                    {{#with battery}}
+                        {{> collapse-button targetName="#batList" ariaName="batList" buttonData="Battery"}}
+                        
+                        <br>
+
+                        <div class="collapse" id="batList">
+                            <div class="card card-body">
+                                <div>
+                                    Type - <b>{{type}}</b>
+                                </div>
+                                <div>
+                                    Capacity - <b>{{capacity}}</b>
+                                </div>
+                                <div>
+                                    Lifetime - <b>{{life}}</b>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    {{/with}}
+                </div>
+                
+                <br>
+
+                <div>
+                    {{#with dimensions}}
+                        {{> collapse-button targetName="#sizeList" ariaName="sizeList" buttonData="Sizings"}}
+
+                        <br>
+
+                        <div class="collapse" id="sizeList">
+                            <div class="card card-body">
+                                <div>
+                                    Height - <b>{{height}}</b>
+                                </div>
+                                <div>
+                                    Width - <b>{{width}}</b>
+                                </div>
+                                <div>
+                                    Depth - <b>{{depth}}</b>
+                                </div>
+                                <div>
+                                    Weight - <b>{{../weight}}</b>
+                                </div>
+                            </div>
+
+                        </div>
+                    {{/with}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{> collapse-button targetName="#opList" ariaName="opList" buttonData="System"}}
+
+                    <br>
+
+                    <div class="collapse" id="opList">
+                        <div class="card card-body">
+                            <div>
+                                Operating system - <b>{{operating_system}}</b>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <br>
+                
+                <div>
+                    {{> collapse-button targetName="#accList" ariaName="accList" buttonData="Additional things"}}
+
+                    <br>
+
+                    <div class="collapse" id="accList">
+                        <div class="card card-body">
+                            <ul>
+                                {{#each accessories}}
+                                    <li>
+                                        <div>
+                                            <b>{{name}}</b> - <b>{{price}}</b>
+                                        </div>
+
+                                        <br>
+
+                                        <button type="button" class="btn btn-primary btn-sm">Buy</button>
+                                    </li>
+
+                                    <br>
+                                {{/each}}
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            {{/with}}
+        </section>
+
+    </main>
+</div>
