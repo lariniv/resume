@@ -1,0 +1,89 @@
+<div>
+    <main>
+        <section>
+            {{> title data=name big=true}}
+
+            <br>
+
+            <div>
+                <i>{{description}}</i>
+            </div>
+        
+
+            <br>
+
+            <div>
+                <p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#creation" aria-expanded="false" aria-controls="collapseExample">Creation</button>
+                </p>
+                {{#with history}}
+                    <div class="collapse" id="creation">
+                        <div class="card card-body">
+                            <div>
+                                Year of creation - {{year}}
+                            </div>
+                            <div>
+                                Founded by - {{founder}}
+                            </div>
+                        </div>
+                    </div>
+                {{/with}}
+            </div>
+        </section>
+
+        {{> spliter}}
+
+        {{> list-badge-section title="Types" listName=types}}
+
+        {{> spliter}}
+
+        <section>
+            {{> title data="Syntax"}}
+
+            <br>
+
+            <div>
+                {{#with syntax}}
+                    {{> list listName=variables listTitle="Variables"}}
+                    <br>
+                    {{> list listName=functions listTitle="Functions"}}
+                    <br>
+                    {{> list listName=conditionals listTitle="Conditionals"}}
+                    <br>
+                    {{> list listName=loops listTitle="Loops"}}
+                    <br>
+                    {{> list listName=classes listTitle="Classes"}}
+                {{/with}}
+            </div>
+        </section>
+
+        {{> spliter}}
+
+        {{> list-badge-section title="Features" listName=features}}
+
+        {{> spliter}}
+
+        {{> list-badge-section title="Libraries" listName=libraries}}
+
+        {{> spliter}}
+
+        {{> list-badge-section title="Tools" listName=tools}}
+
+        {{>spliter}}
+
+        <section>
+            {{> title data="Js-related websites"}}
+            
+            <ul>
+                 {{#each community}}
+                    <li>
+                        <div>
+                            {{name}} - {{type}}
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+
+        </section>
+    </main>
+</div>
