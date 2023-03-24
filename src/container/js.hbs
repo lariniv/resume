@@ -13,18 +13,19 @@
             <br>
 
             <div>
-                <p>
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#creation" aria-expanded="false" aria-controls="collapseExample">Creation</button>
-                </p>
+                <div>
+                    <b>Creation:</b>
+                </div>
+
+                <br>
+
                 {{#with history}}
-                    <div class="collapse" id="creation">
-                        <div class="card card-body">
-                            <div>
-                                Year of creation - {{year}}
-                            </div>
-                            <div>
-                                Founded by - {{founder}}
-                            </div>
+                    <div>
+                        <div>
+                            Year of creation - <b>{{year}}</b>
+                        </div>
+                        <div>
+                            Founded by - <b>{{founder}}</b>
                         </div>
                     </div>
                 {{/with}}
