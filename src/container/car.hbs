@@ -24,119 +24,113 @@
                     <section>
                         {{> title data="Interior"}}
 
-                        <br>
+                        {{> spliter}}
 
                         {{#with seats}}
                             <div>
                                 <div>
-                                    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#seatsList" role="button" aria-expanded="false" aria-controls="collapseExample">Seats</button>
+                                    <b>Seats</b>
                                 </div>
                                 
                                 <br>
                                 
-                                <div class="collapse" id="seatsList">
-                                    <div class="card card-body">
-                                        <div>
-                                            Material - <b>{{material}}</b>
-                                        </div>
+                                <ul>
+                                    <li>
+                                        Material - <b>{{material}}</b>
+                                    </li>
 
-                                        <div>
-                                            Color - <b>{{color}}</b>
-                                        </div>
+                                    <li>
+                                        Color - <b>{{color}}</b>
+                                    </li>
 
-                                        {{#if heated}}
-                                            <div>
-                                                Heating <b>included</b>
-                                            </div>
-                                        {{/if}}
+                                    {{#if heated}}
+                                        <li>
+                                            Heating <b>included</b>
+                                        </li>
+                                    {{/if}}
 
-                                        {{#if ventilated}}
-                                            <div>
-                                                Ventilation <b>included</b>
-                                            </div>
-                                        {{/if}}
-                                    </div>
-                                </div>
+                                    {{#if ventilated}}
+                                        <li>
+                                            Ventilation <b>included</b>
+                                        </li>
+                                    {{/if}}
+                                </ul>
                             </div>
                         {{/with}}
 
-                        <br>
+                        {{> spliter}}
 
                         {{#with dashboard}}
                             <div>
                                 <div>
-                                    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#dashList" role="button" aria-expanded="false" aria-controls="collapseExample">Dashboard</button>
+                                    <b>Dashboard</b>
                                 </div>
                                 
                                 <br>
                                 
-                                <div class="collapse" id="dashList">
-                                    <div class="card card-body">
-                                        <div>
-                                            Material - <b>{{material}}</b>
-                                        </div>
+                                <ul>
+                                    <li>
+                                        Material - <b>{{material}}</b>
+                                    </li>
 
-                                        <div>
-                                            Color - <b>{{color}}</b>
-                                        </div>
+                                    <li>
+                                        Color - <b>{{color}}</b>
+                                    </li>
 
-                                        {{#with display}}
-                                            <div>
-                                                <b>Display :</b>
+                                    {{#with display}}
+                                        <li>
+                                            <b>Display :</b>
 
-                                                <ul>
-                                                    <li>Type - <b>{{type}}</b></li>
-                                                    <li>Size - <b>{{size}}</b></li>
-                                                    <li>Resolution - <b>{{resolution}}</b></li>
-                                                    
-                                                    {{#if touchscreen}}
-                                                        <li>Supports <b>touchscreen technology</b></li>
-                                                    {{/if}}
-                                                </ul>
-                                            </div>
-                                        {{/with}}
-                                    </div>
-                                </div>
+                                            <ul>
+                                                <li>Type - <b>{{type}}</b></li>
+                                                <li>Size - <b>{{size}}</b></li>
+                                                <li>Resolution - <b>{{resolution}}</b></li>
+                                                
+                                                {{#if touchscreen}}
+                                                    <li>Supports <b>touchscreen technology</b></li>
+                                                {{/if}}
+                                            </ul>
+                                        </li>
+                                    {{/with}}
+                                </ul>
                             </div>
                         {{/with}}
 
-                        <br>
+                        {{> spliter}}
 
                         {{#with audio}}
                             <div>
                                 <div>
-                                    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#audioList" role="button" aria-expanded="false" aria-controls="collapseExample">Audio</button>
+                                    <b>Audio</b>
                                 </div>
                                 
                                 <br>
                                 
-                                <div class="collapse" id="audioList">
-                                    <div class="card card-body">
-                                    <div>
+                                <ul>
+                                    <li>
                                             System - <b>{{system}}</b>
-                                    </div>
-                                    <div>
+                                    </li>
+                                    <li>
                                             Speakers amount - <b>{{speakers}}</b>
-                                    </div>
+                                    </li>
                                     {{#if subwoofer}}
-                                            <div>
-                                                Includes <b>subwoofer</b>
-                                            </div>
+                                        <li>
+                                            Includes <b>subwoofer</b>
+                                        </li>
                                     {{/if}}
 
                                     {{#if bluetooth}}
-                                            <div>
-                                                Supports <b>bluetooth</b>
-                                            </div>
+                                        <li>
+                                            Supports <b>bluetooth</b>
+                                        </li>
                                     {{/if}}
 
                                     {{#if USB}}
-                                            <div>
-                                                Supports <b>USB</b>
-                                            </div>
+                                        <li>
+                                            Supports <b>USB</b>
+                                        </li>
                                     {{/if}}
-                                    </div>
-                                </div>
+                                </ul>
                             </div>
                         {{/with}}
                     </section>
@@ -153,80 +147,74 @@
                         {{#with wheels}}
                             <div>
                                 <div>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#wheelsList" aria-expanded="false" aria-controls="collapseExample">Wheels</button>
+                                    <b>Wheels</b>
                                 </div>
 
                                 <br>
 
-                                <div class="collapse" id="wheelsList">
-                                    <div class="card card-body">
-                                        <div>
-                                            Size - <b>{{size}}</b>
-                                        </div>
-                                        <div>
-                                            Type - <b>{{type}}</b>
-                                        </div>
-                                        <div>
-                                            Color - <b>{{color}}</b>
-                                        </div>
-                                    </div>
-                                </div>
+                                <ul>
+                                    <li>
+                                        Size - <b>{{size}}</b>
+                                    </li>
+                                    <li>
+                                        Type - <b>{{type}}</b>
+                                    </li>
+                                    <li>
+                                        Color - <b>{{color}}</b>
+                                    </li>
+                                </ul>
                             </div> 
                         {{/with}}
 
-                        <br>
+                        {{> spliter}}
 
                         {{#with headlights}}
                             <div>
                                 <div>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#headList" aria-expanded="false" aria-controls="collapseExample">Headlights</button>
+                                    <b>Headlights</b>
                                 </div>
 
                                 <br>
 
-                                <div class="collapse" id="headList">
-                                    <div class="card card-body">
-                                        <div>
-                                            Headlights - <b>{{type}}</b>
-                                        </div>
-                                        <div>
-                                            Brightness - <b>{{brightness}}</b>
-                                        </div>
-                                        {{#if automatic}}
-                                            <div>
-                                                Are - <b>automatic</b>
-                                            </div>
-                                        {{/if}}
-                                    </div>
-                                </div>
+                                <ul>
+                                    <li>
+                                        Headlights - <b>{{type}}</b>
+                                    </li>
+                                    <li>
+                                        Brightness - <b>{{brightness}}</b>
+                                    </li>
+                                    {{#if automatic}}
+                                        <li>
+                                            Are - <b>automatic</b>
+                                        </li>
+                                    {{/if}}
+                                </ul>
                             </div>
                         {{/with}}
 
-                        <br>
+                        {{> spliter}}
 
                         {{#with sunroof}}
                             <div>
                                 <div>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#roofList" aria-expanded="false" aria-cpmrtols="collapseExample">Sunroof</button>
+                                    <b>Sunroof</b>
                                 </div>
 
                                 <br>
 
-                                <div class="collapse" id="roofList">
-                                    <div class="card card-body">
-                                        <div>
-                                            Roof type - <b>{{type}}</b>
-                                        </div>
-                                        <div>
-                                            Roof size - <b>{{size}}</b>
-                                        </div>
-                                        {{#if automatic}}
-                                            <div>
-                                                Is - <b>automatic</b>
-                                            </div>
-                                        {{/if}}
-                                    </div>
-                                </div>
+                                <ul>
+                                    <li>
+                                        Roof type - <b>{{type}}</b>
+                                    </li>
+                                    <li>
+                                        Roof size - <b>{{size}}</b>
+                                    </li>
+                                    {{#if automatic}}
+                                        <li>
+                                            Is - <b>automatic</b>
+                                        </li>
+                                    {{/if}}
+                                </ul>
                             </div>
                         {{/with}}
                     </section>
@@ -243,73 +231,69 @@
                         {{#with airbags}}
                             <div>
                                 <div>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#bagsList" aria-expanded="false" aria-cpmrtols="collapseExample">Airbags</button>
+                                    <b>Airbags</b>
                                 </div>  
 
                                 <br>
 
-                                <div class="collapse" id="bagsList">
-                                    <div class="card card-body">
-                                        <div>
-                                            Front airabags amount - <b>{{front}}</b>
-                                        </div>
-                                        <div>
-                                            Side airabags amount - <b>{{side}}</b>
-                                        </div>
-                                        <div>
-                                            Knee airabags amount - <b>{{knee}}</b>
-                                        </div>
-                                        <div>
-                                            Rear airabags amount - <b>{{rear}}</b>
-                                        </div>
-                                    </div>
-                                </div> 
+                                <ul>
+                                    <li>
+                                        Front airabags amount - <b>{{front}}</b>
+                                    </li>
+                                    <li>
+                                        Side airabags amount - <b>{{side}}</b>
+                                    </li>
+                                    <li>
+                                        Knee airabags amount - <b>{{knee}}</b>
+                                    </li>
+                                    <li>
+                                        Rear airabags amount - <b>{{rear}}</b>
+                                    </li>
+                                </ul>
                             </div>
                         {{/with}}
 
-                        <br>
+                        {{> spliter}}
 
                         {{#with assistance}}
                             <div>
                                 <div>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#assistanceList" aria-expanded="false" aria-cpmrtols="collapseExample">Assistance</button>
+                                    <b>Assistance</b>
                                 </div>  
 
                                 <br>
 
-                                <div class="collapse" id="assistanceList">
-                                    <div class="card card-body">
-                                        {{#if blind_spot_monitoring}}
-                                            <div>
-                                                Supports <b>blind spot monitoring</b> technology
-                                            </div>
-                                        {{/if}}
+                                <ul>
+                                    {{#if blind_spot_monitoring}}
+                                        <li>
+                                            Supports <b>blind spot monitoring</b> technology
+                                        </li>
+                                    {{/if}}
 
-                                        {{#if rear_cross_traffic_alert}}
-                                            <div>
-                                                Supports <b> rear cross traffic alert</b> technology
-                                            </div>
-                                        {{/if}}
+                                    {{#if rear_cross_traffic_alert}}
+                                        <li>
+                                            Supports <b> rear cross traffic alert</b> technology
+                                        </li>
+                                    {{/if}}
 
-                                        {{#if lane_departure_warning}}
-                                            <div>
-                                                Supports <b>lane departure warning</b> technology
-                                            </div>
-                                        {{/if}}
+                                    {{#if lane_departure_warning}}
+                                        <li>
+                                            Supports <b>lane departure warning</b> technology
+                                        </li>
+                                    {{/if}}
 
-                                        {{#if adaptive_cruise_control}}
-                                            <div>
-                                                Supports <b>adaptive cruise control</b> technology
-                                            </div>
-                                        {{/if}}
+                                    {{#if adaptive_cruise_control}}
+                                        <li>
+                                            Supports <b>adaptive cruise control</b> technology
+                                        </li>
+                                    {{/if}}
 
-                                        {{#if acollision_warning}}
-                                            <div>
-                                                Supports <b>collision warning</b> technology
-                                            </div>
-                                        {{/if}}
-                                    </div>
-                                </div> 
+                                    {{#if acollision_warning}}
+                                        <li>
+                                            Supports <b>collision warning</b> technology
+                                        </li>
+                                    {{/if}}
+                                </ul>
                             </div>
                         {{/with}}
                     </section>
@@ -328,99 +312,97 @@
                 <section>
                     <div>
                         <div>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#engineList" aria-expanded="false" aria-cpmrtols="collapseExample">Engine</button>
+                            <b>Engine</b>
                         </div>
 
                         <br>
 
-                        <div class="collapse" id="engineList">
-                            <div class="card card-body">
-                                <div>
-                                    Engine type - <b>{{type}}</b>
-                                </div>
-                                <div>
-                                    Displacement - <b>{{displacement}}</b>
-                                </div>
-                                <div>
-                                    Horsepower - <b>{{horsepower}}</b>
-                                </div>
-                                <div>
-                                    Torque - <b>{{torque}}</b>
-                                </div>
-                                <div>
-                                    Transmission type - <b>{{transmission.type}}</b>
-                                </div>
-                                <div>
-                                    Transmission gears amount - <b>{{transmission.gears}}</b>
-                                </div>
-                            </div>
-                        </div>
+                        <ul>
+                            <li>
+                                Engine type - <b>{{type}}</b>
+                            </li>
+                            <li>
+                                Displacement - <b>{{displacement}}</b>
+                            </li>
+                            <li>
+                                Horsepower - <b>{{horsepower}}</b>
+                            </li>
+                            <li>
+                                Torque - <b>{{torque}}</b>
+                            </li>
+                            <li>
+                                Transmission type - <b>{{transmission.type}}</b>
+                            </li>
+                            <li>
+                                Transmission gears amount - <b>{{transmission.gears}}</b>
+                            </li>
+                        </ul>
                     </div>
                 </section>
             {{/with}}
+
+            {{> spliter}}
 
             {{#with fuel_economy}}
                 <section>
                     <div>
                         <div>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#fuelList" aria-expanded="false" aria-cpmrtols="collapseExample">Fuel</button>
+                            <b>Fuel</b>
                         </div>
 
                         <br>
 
-                        <div class="collapse" id="fuelList">
-                            <div class="card card-body">
-                                <div>
-                                    Fuel consumption (city) - <b>{{city}}</b>
-                                </div>
-                                <div>
-                                    Fuel consumption (highway) - <b>{{highway}}</b>
-                                </div>
-                                <div>
-                                    Fuel consumption (combined) - <b>{{combined}}</b>
-                                </div>
-                            </div>
-                        </div>
+                        <ul>
+                            <li>
+                                Fuel consumption (city) - <b>{{city}}</b>
+                            </li>
+                            <li>
+                                Fuel consumption (highway) - <b>{{highway}}</b>
+                            </li>
+                            <li>
+                                Fuel consumption (combined) - <b>{{combined}}</b>
+                            </li>
+                        </ul>
                     </div>
                 </section>
             {{/with}}
+
+            {{> spliter}}
 
             {{#with price}}
                 <section>
                     <div>
                         <div>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#priceList" aria-expanded="false" aria-cpmrtols="collapseExample">Price</button>
+                            <b>Price</b>
                         </div>
 
                         <br>
 
-                        <div class="collapse" id="priceList">
-                            <div class="card card-body">
+                        <ul>
+                            <li>
+                                Base price - <b>{{base}}$</b>
+                            </li>
+                            <li>
+                                Destination price - <b>{{destination}}$</b>
+                            </li>
+                            <li>
                                 <div>
-                                    Base price - <b>{{base}}</b>
-                                </div>
-                                <div>
-                                    Destination price - <b>{{destination}}</b>
-                                </div>
-                                <div>
+                                    Optionary :
+                                </div> 
+                                {{#with options}}
                                     <div>
-                                        Optionary :
+                                        <ul>
+                                            <li>Navigation - <b>{{navigation}}$</b></li>
+                                            <li>Moonroof - <b>{{moonroof}}$</b></li>
+                                            <li>Premuim paint - <b>{{premium_paint}}$</b></li>
+                                        </ul>
                                     </div> 
-                                    {{#with options}}
-                                        <div>
-                                            <ul>
-                                                <li>Navigation - <b>{{navigation}}</b></li>
-                                                <li>Moonroof - <b>{{moonroof}}</b></li>
-                                                <li>Premuim paint - <b>{{premium_paint}}</b></li>
-                                            </ul>
-                                        </div> 
-                                    {{/with}}
-                                </div>
-                                <div>
-                                    Total price - <b>{{total}}</b>
-                                </div>
-                            </div>
-                        </div>
+                                {{/with}}
+                            </li>
+                            <li>
+                                Total price - <b>{{total}}$</b>
+                            </li>
+                        </ul>
                     </div>
                 </section>
             {{/with}}
