@@ -1,0 +1,246 @@
+<div>
+    <main>
+        <section>
+            <div>
+                {{> title data=name big=true}}
+                <span>{{description}}</span>
+            </div>
+            
+            <br>
+
+            <div>
+                Price - <b>{{price}}$</b>
+            </div>
+            <div>
+                <span class="badge bg-primary">{{category}}</span>
+            </div>
+
+            <br>
+
+            <a type="button" href="#" class="btn btn-primary btn-small">Buy</a>
+        </section>
+
+        {{> spliter}}
+
+        <section>
+            {{#with features}}
+                {{> title data="Features"}}
+
+                {{> spliter}}
+
+                <div>
+                     {{#with processor}}
+                        <div>
+                            <b>Processor</b>
+                        </div>
+
+                        <br>
+
+                        <ul>
+                            <li>Brand - <b>{{brand}}</b></li>
+                            <li>Model - <b>{{model}}</b></li>
+                            <li>Speed - <b>{{speed}}</b></li>
+                            <li>Cores amount - <b>{{cores}}</b></li>
+                            <li>Cache - <b>{{cache}}</b></li>
+                        </ul>
+                    {{/with}}
+                </div>
+               
+                {{> spliter}}
+
+                <div>
+                    {{#with memory}}
+                        <div>
+                            <b>Memory</b>
+                        </div>
+
+                        <br>
+
+                        <ul>
+                            <li>Type - <b>{{type}}</b></li>
+                            <li>Size - <b>{{size}}</b></li>
+                            <li>Speed - <b>{{speed}}</b></li>
+                        </ul>
+                    {{/with}}
+                </div>                
+
+                {{> spliter}}
+
+                <div>
+                    {{#with storage}}
+                       <div>
+                            <b>Storage</b>
+                        </div>
+
+                        <br>
+
+                        <ul>
+                            <li>Type - <b>{{type}}</b></li>
+                            <li>Size - <b>{{size}}</b></li>
+                        </ul>
+                    {{/with}}
+                </div>
+
+                {{> spliter}}
+
+                <div>
+                    {{#with display}}
+                        <div>
+                            <b>Display</b>
+                        </div>
+
+                        <br>
+
+                        <ul>
+                            <li>Size - <b>{{size}}</b></li>
+                            <li>Resolution - <b>{{resolution}}</b></li>
+                            <li>Technology - <b>{{technology}}</b></li>
+                            <li>Color spaxce - <b>{{color_space}}</b></li>
+                            <li>Brightness - <b>{{brightness}}</b></li>
+                            <li>Refresh rate - <b>{{refresh_rate}}</b> </li>
+                        </ul>
+                    {{/with}}
+                </div>
+
+                {{> spliter}}
+
+                <div>
+                    {{#with graphics}}
+                        <div>
+                            <b>Graphics</b>
+                        </div>
+
+                        <br>
+
+
+                        <ul>
+                            <li>Brand - <b>{{brand}}</b></li>
+                            <li>Model - <b>{{model}}</b></li>
+                            <li>Memory - <b>{{memory}}</b></li>
+                        </ul>
+                    {{/with}}
+                </div>
+                
+                {{> spliter}}
+
+                <div>
+                    <div>
+                        <b>Ports</b>
+                    </div>
+
+                    <br>
+
+                    <ul>
+                        {{#each ports}}
+                        <li>
+                            <div>
+                                Port type - <b>{{type}}</b>
+                            </div>
+                            <div>
+                                Port count - <b>{{count}}</b>
+                            </div>
+                            {{#if features}}
+                            <br>
+                            {{/if}}
+                            <div>
+                                Port features:
+                            </div>
+                            <div>
+                                <ul>
+                                    {{#each features}}
+                                    <li><b>{{this}}</b></li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </li>
+
+                        <br>
+                        {{/each}}
+
+                    </ul>
+        
+                </div>
+
+                {{> spliter}}
+
+                <div>
+                    {{#with battery}}
+                        <div>
+                            <b>Battery</b>
+                        </div>
+
+                        <br>
+
+
+                        <ul>
+                            <li>Type - <b>{{type}}</b></li>
+                            <li>Capacity - <b>{{capacity}}</b></li>
+                            <li>Lifetime - <b>{{life}}</b></li>
+                        </ul>
+                    
+                    {{/with}}
+                </div>
+                
+                {{> spliter}}
+
+                <div>
+                    {{#with dimensions}}
+                        <div>
+                            <b>Dimensions</b>
+                        </div>
+
+                        <br>
+
+                        <ul>
+                            <li>Height - <b>{{height}}</b></li>
+                            <li>Width - <b>{{width}}</b></li>
+                            <li>Depth - <b>{{depth}}</b></li>
+                            <li>Weight - <b>{{../weight}}</b></li>
+                        </ul>
+                    {{/with}}
+                </div>
+
+                {{> spliter}}
+
+                <div>
+                    <div>
+                        <b>Opearting system</b>
+                    </div>
+
+                    <br>
+
+                    <ul>
+                        <li>Operating system - <b>{{operating_system}}</b></li>
+                    </ul>
+                </div>
+
+                <br>
+                
+                <div>
+                    <div>
+                        <b>Accesories</b>
+                    </div>
+
+                    <br>
+
+                    <ul>
+                        {{#each accessories}}
+                            <li>
+                                <div>
+                                    <b>{{name}}</b> - <b>{{price}}</b>
+                                </div>
+
+                                <br>
+
+                                <a type="button" href="#" class="btn btn-primary btn-sm">Buy</a>
+                            </li>
+
+                            <br>
+                        {{/each}}
+                    </ul>
+                </div>
+            {{/with}}
+        </section>
+
+    </main>
+</div>
