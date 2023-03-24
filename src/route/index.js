@@ -821,6 +821,9 @@ router.get('/car', function (req, res) {
         premium_paint: 595,
       },
       total: 28990,
+    }
+  })
+})
 
 router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -975,6 +978,9 @@ router.get('/facebook', function (req, res) {
         ],
       },
     ],
+  })
+})
+
 
 router.get('/mac', function (req, res) {
   // res.render генерує нам HTML сторінку
