@@ -1,0 +1,90 @@
+<div>
+    <main>
+        <section>
+            {{> title data=name big=true}}
+
+            <br>
+
+            <div>
+                <i>{{description}}</i>
+            </div>
+        
+
+            <br>
+
+            <div>
+                <div>
+                    <b>Creation:</b>
+                </div>
+
+                <br>
+
+                {{#with history}}
+                    <div>
+                        <div>
+                            Year of creation - <b>{{year}}</b>
+                        </div>
+                        <div>
+                            Founded by - <b>{{founder}}</b>
+                        </div>
+                    </div>
+                {{/with}}
+            </div>
+        </section>
+
+        {{> spliter}}
+
+        {{> list-badge-section title="Types" listName=types}}
+
+        {{> spliter}}
+
+        <section>
+            {{> title data="Syntax"}}
+
+            <br>
+
+            <div>
+                {{#with syntax}}
+                    {{> list listName=variables listTitle="Variables"}}
+                    <br>
+                    {{> list listName=functions listTitle="Functions"}}
+                    <br>
+                    {{> list listName=conditionals listTitle="Conditionals"}}
+                    <br>
+                    {{> list listName=loops listTitle="Loops"}}
+                    <br>
+                    {{> list listName=classes listTitle="Classes"}}
+                {{/with}}
+            </div>
+        </section>
+
+        {{> spliter}}
+
+        {{> list-badge-section title="Features" listName=features}}
+
+        {{> spliter}}
+
+        {{> list-badge-section title="Libraries" listName=libraries}}
+
+        {{> spliter}}
+
+        {{> list-badge-section title="Tools" listName=tools}}
+
+        {{>spliter}}
+
+        <section>
+            {{> title data="Js-related websites"}}
+            
+            <ul>
+                 {{#each community}}
+                    <li>
+                        <div>
+                            {{name}} - {{type}}
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+
+        </section>
+    </main>
+</div>
