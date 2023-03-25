@@ -1068,5 +1068,12 @@ router.get('/mac', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
+
+router.get("/bootstrap", function (req, res){
+
+  res.render("bootstrap",{
+    layout:"basic",
+  })
+})
 // Підключаємо роутер до бек-енду
 module.exports = router
