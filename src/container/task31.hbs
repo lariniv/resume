@@ -1,0 +1,178 @@
+
+<div>
+    {{#with navigation}}
+    <nav>
+        <div class="row g-1">
+            {{#with links}}
+                <div class="col-1">
+                    <a class="btn btn-link" href="{{[0].href}}">{{[0].text}}</a>
+                </div>
+                <div class="col-1">
+                    <a class="btn btn-link" href="{{[1].href}}">{{[1].text}}</a>
+                </div>
+                <div class="col-1">
+                    <a class="btn btn-link" href="{{[2].href}}">{{[2].text}}</a>
+                </div>
+            {{/with}}
+            <div class="col-2">
+                <a type="button" class="btn btn-primary" href="{{button.href}}">{{button.text}}</a>
+            </div>
+        </div>
+    </nav>
+    {{/with}}
+
+    <hr>
+
+    {{#with header}}
+        <header>
+            <h1>{{title}}</h1>
+
+            <p>{{description}}</p>
+
+            <a type="buyyon" class="btn btn-primary" href="{{button.link}}">{{button.text}}</a>
+        </header>
+    {{/with}}
+
+    <hr>
+
+    <main>
+        <div class="row g-3">
+            {{#with city}}
+                <div class="col-12">
+                    <h2>{{title}}</h2>
+                </div>
+                {{> city-card-task31 card_name=cards.[0]}}
+                {{> city-card-task31 card_name=cards.[1]}}
+                {{> city-card-task31 card_name=cards.[2]}}
+                {{> city-card-task31 card_name=cards.[3]}}
+            {{/with}}
+
+            <hr>
+
+            {{#with winner}}
+            <div class="col-12">
+                <h2>{{title}}</h2>
+            </div>
+
+            <div class="col-12">
+                {{#with table}}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <ul>
+                                    {{#each head}}
+                                        <th>{{this}}</th>
+                                    {{/each}}
+                                </ul>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ul>
+                                {{#each user}}
+                                <tr>
+                                    <th>{{place}}</th>
+                                    <td>{{name}}</td>
+                                    <td>{{surname}}</td>
+                                    <td>{{nickname}}</td>
+                                </tr>
+                                {{/each}}
+                            </ul>
+                        </tbody>
+                    </table>
+                {{/with}}
+            </div>
+            {{/with}}
+
+            <hr>
+
+            {{#with gallery}}
+            <h2>{{title}}</h2>
+
+            <div class="col-4">
+                {{> gal-card-task31 cardName=cards.[0]}}
+            </div>
+            <div class="col-4">
+                {{> gal-card-task31 cardName=cards.[1]}}
+            </div>
+            <div class="col-4">
+                {{> gal-card-task31 cardName=cards.[2]}}
+            </div>
+            {{/with}}
+        
+            <hr>
+
+            {{#with relaxion}}
+            <div class="col-12">
+                <span class="display-3">{{title}}</span>
+            </div>
+            <div class="col-9">
+                <div class="row g-3">
+                    <div class="col-6">
+                        {{> standart-card cardName=cards.[0] sec=true}}
+                    </div>
+                    
+                    <div class="col-6">
+                        {{> standart-card cardName=cards.[1] sec=true}}
+                    </div>
+
+                    <div class="col-6">
+                        {{> standart-card cardName=cards.[2] sec=true}}
+                    </div>
+
+                    <div class="col-6">
+                        {{> standart-card cardName=cards.[3] sec=true}}
+                    </div>
+                </div>
+            </div>
+            {{/with}}
+            
+            <hr>
+
+            {{#with rest}}
+                <div class="col-5">
+                    {{> rest-card-task31 cardName=cards.[0]}}
+                </div>
+                <div class="col-5">
+                    {{> rest-card-task31 cardName=cards.[1]}}
+                </div>
+            {{/with}}
+
+            <hr>
+
+            {{#with proposition}}
+                <div class="col-12">
+                    <span class="display-2">{{title}}</span>
+                </div>
+
+                <div class="col-9">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            {{> standart-card cardName=card.[0] warn=true}}
+                        </div>
+                        
+                        <div class="col-6">
+                            {{> standart-card cardName=card.[1] warn=true}}
+                        </div>
+
+                    </div>
+
+                </div>
+            {{/with}}
+        </div>
+    </main>
+
+    <hr>
+    {{#with footer}}
+    <footer>
+       <h5>{{title}}</h5> 
+       <div class="col-8">
+            <div class="row gy-3">
+                {{> nav-row first=navigation.[0] second=socialMedia.[0] third=partners.[0]}}
+                {{> nav-row first=navigation.[1] second=socialMedia.[1] third=partners.[1]}}
+                {{> nav-row first=navigation.[2] second=socialMedia.[2] third=partners.[2]}}
+            </div>
+       </div>
+    </footer>
+    {{/with}}
+</div>
+

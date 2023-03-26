@@ -1,0 +1,15 @@
+{{#with cardName}}
+<div class="card {{#if ../sec}} text-bg-secondary {{/if}} {{#if ../warn}} text-bg-warning {{/if}}">
+    <div class="card-header">
+        {{header}}
+    </div>
+    <div class="card-body">
+        <div class="card-title">
+            <span>{{title}}</span>
+        </div>
+        <p>
+            {{description}}
+        </p>
+    </div>
+</div>
+{{/with}}
