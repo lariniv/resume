@@ -1,0 +1,21 @@
+{{#with part}}
+    <div class="card card-body">
+        <div {{#if ../end}} class="text-end" {{/if}} {{#if ../center}} class="text-center" {{/if}}>
+            <span class="display-4 text-muted">{{title}}</span>
+        </div>
+
+        <br>
+
+        <h6 {{#if ../end}} class="text-end" {{/if}} {{#if ../center}} class="text-center" {{/if}}>{{sub_title}}</h6>
+
+        <br>
+
+        <p {{#if ../end}} class="text-end" {{/if}} {{#if ../center}} class="text-center" {{/if}}>{{description}}</p>
+
+        <br>
+
+        <div>
+            <button type="button" class="btn btn-outline-warning">{{button}}</button>
+        </div>
+    </div>
+{{/with}}
