@@ -1,0 +1,154 @@
+<header>
+    <div class="card mt-5">
+        <div class="row pe-0">
+                <div class="col-7 ms-3 mb-2 ">
+                    <h1>Shop</h1>
+                </div>      
+                {{#with navigation}}
+                <div class="nav col-4 pt-2">
+                    <div class="nav-item">
+                        <a href="{{links.[0].href}}" class="nav-link">{{links.[0].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{links.[1].href}}" class="nav-link">{{links.[1].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{links.[2].href}}" class="nav-link">{{links.[2].text}}</a>
+                    </div>`
+                    <div class="nav-item pe-0">
+                        <a href="#" class="nav-link disabled">{{Logo}} </a>
+                    </div>
+                </div>
+            {{/with}}  
+        </div>
+     </div>
+</header>
+
+<main class="mt-5">
+    <div class="row">
+        {{#with newsBlock}}
+            <div class="col-12">
+                <h2 class="text-center mb-5">{{title}}</h2>
+            </div>
+
+            <div class="col-3">
+                {{> news-card cardName=cards.[0]}}
+            </div>
+            <div class="col-3">
+                {{> news-card cardName=cards.[1]}}
+            </div>
+            <div class="col-3 mb-2">
+                {{> news-card cardName=cards.[2]}}
+            </div>
+            <div class="col-3">
+                {{> news-card cardName=cards.[3]}}
+            </div>
+            <div class="col-3">
+                {{> news-card cardName=cards.[4]}}
+            </div>
+            <div class="col-3">
+                {{> news-card cardName=cards.[5]}}
+            </div>
+            <div class="col-3">
+                {{> news-card cardName=cards.[6]}}
+            </div>
+            <div class="col-3">
+                {{> news-card cardName=cards.[7]}}
+            </div>
+        {{/with}}
+    </div>
+    
+    <hr class="my-5">
+
+    {{#with goodsBlock}}
+        {{#with tabs}}
+            <div class="nav nav-tabs">
+                {{> goods-tab tabName=[0]}}
+                {{> goods-tab tabName=[1]}}
+                {{> goods-tab tabName=[2]}}
+                {{> goods-tab tabName=[3]}}
+            </div>
+        {{/with}}
+
+        <div class="row">
+            {{#with cards}}
+            <div class="col-4">
+                {{> goods-card cardName=[0]}}
+            </div>
+            <div class="col-4">
+                {{> goods-card cardName=[1]}}
+            </div>
+            <div class="col-4 mb-5">
+                {{> goods-card cardName=[2]}}
+            </div>
+            <div class="col-4">
+                {{> goods-card cardName=[3]}}
+            </div>
+            <div class="col-4">
+                {{> goods-card cardName=[4]}}
+            </div>
+            <div class="col-4">
+                {{> goods-card cardName=[5]}}
+            </div>
+            {{/with}}
+        </div>
+    {{/with}}
+
+    <hr class="my-5">
+    
+    {{#with subscribe}}
+        <div class="card text-bg-dark p-3 pb-0">
+            <div class="row">
+                <h2 class="col-8">{{header}}</h2>
+
+                <div class="col-2 mt-4">
+                    {{> basic-button buttonName=buttons.[0]}}
+                </div>
+                <div class="col-2 mt-4">
+                    {{> basic-button buttonName=buttons.[1]}}
+                </div>
+
+                <p class="col-12">{{description}}</p>
+            </div>
+        </div>
+    {{/with}}
+
+    <hr class="my-5">
+
+    {{#with service}}
+        <div class="card text-bg-success p-3 pb-0 text-center">
+            <div class="row">
+                <h2 class="col-12">{{title}}</h2>
+                <p class="col-12">{{description}}</p>
+                <div class="col-12 mb-3">
+                    {{> basic-button buttonName=buttons.[0]}}
+                </div>
+            </div>
+        </div>
+    {{/with}}
+</main>
+
+<hr class="my-5">
+
+<footer>
+    <ul>
+        <div class="row">
+            {{#each footer}}
+                <div class="nav flex-column col-2 me-2">
+                    <div class="nav-item">
+                        <a href="{{[0].link}}" class="nav-link">{{[0].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{[1].link}}" class="nav-link">{{[1].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{[2].link}}" class="nav-link">{{[2].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{[3].link}}" class="nav-link disabled">{{[3].text}}</a>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </ul>
+</footer>

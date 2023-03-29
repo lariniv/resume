@@ -1,0 +1,17 @@
+{{#with cardName}}
+<div class="card text-bg-dark">
+    <div class="card-header">
+        {{title}}
+
+        {{#if isNew}}
+            <span class="badge bg-success rounded-pill">New</span>
+        {{/if}}
+        {{#if isTop}}
+            <span class="badge bg-danger rounded-pill">Top</span>
+        {{/if}}
+    </div>
+    <div class="card-body">
+        <p>{{description}}</p>
+    </div>
+</div>
+{{/with}}
