@@ -1,0 +1,19 @@
+{{#with cardName}}
+<div class="card">
+    <img class="card-img-top"src="{{image}}" alt="picture">
+    <div class="card-body">
+        <div class="card-title">
+            <span><b>{{title}}</b></span>
+            {{#if isHot}}
+            <span class="badge bg-warning rounded-pill">HOT!</span>
+            {{/if}}
+
+            {{#if isNew}}
+            <span class="badge bg-primary rounded-pill">New</span>
+            {{/if}}
+        </div>
+
+        <p>{{description}}</p>
+    </div>
+</div>
+{{/with}}
