@@ -1,0 +1,15 @@
+<main>
+    <ul>
+        {{#each list}}
+        <li>
+            <button {{#if @index}} disabled {{/if}}>{{name}}</button>
+        </li>
+        {{/each}}
+
+        {{#each user}}
+            <li>
+                {{this}}
+            </li>
+        {{/user}}
+    </ul>
+</main>
