@@ -1,6 +1,6 @@
 {{#with cardName}}
 <div class="card">
-    <img class="card-img-top"src="{{image}}" alt="picture">
+    <img class="card-img-top" src="{{image}}" alt="picture">
     <div class="card-body">
         <div class="card-title">
             <span><b>{{title}}</b></span>
@@ -10,6 +10,10 @@
 
             {{#if isNew}}
             <span class="badge bg-primary rounded-pill">New</span>
+            {{else}}
+            {{#if idNew}}
+            <span class="badge bg-primary rounded-pill">New</span>
+            {{/if}}
             {{/if}}
         </div>
 

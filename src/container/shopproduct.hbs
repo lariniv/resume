@@ -1,0 +1,154 @@
+<main class="my-5">
+    <div class="breadcrumb my-5">
+        {{#with breadcrumb}}
+            <div class="breadcrumb-item ms-4">
+                <a href="{{[0].url}}">{{[0].name}}</a>
+            </div>
+            <div class="breadcrumb-item">
+                <a href="{{[1].url}}">{{[1].name}}</a>
+            </div>
+            <div class="breadcrumb-item">
+                <a href="{{[2].url}}">{{[2].name}}</a>
+            </div>
+            <div class="breadcrumb-item">
+                {{[3].name}}
+            </div>
+        {{/with}}
+    </div>
+
+    {{#with productData}}
+    <div class="row">
+        <div class="col-6 me-5">
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <img src="{{img}}" alt="picture">
+                </div>
+                <div class="col-12">
+                    {{#with info}}
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <span>{{title}}</span>
+                            </div>
+                            <div>
+                                {{about}}
+                            </div>
+                            <div class="my-3">
+                               <h4>{{price}}</h4> 
+                            </div>
+                            <ul class="p-0">
+                                {{#each category}}
+                                    {{#if isHot}}
+                                    <span class="badge bg-warning rounded-pill">{{name}}</span>
+                                    {{/if}}
+                                    {{#if isNew}}
+                                    <span class="badge bg-primary rounded-pill">{{name}}</span>
+                                    {{/if}}
+                                    {{#if isBonus}}
+                                    <span class="badge bg-info rounded-pill">{{name}}</span>
+                                    {{/if}}
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="col-5 ms-4">
+            <div class="row">
+                <div class="col-12">
+                     {{#with item}}
+                        <table class="table">
+                            <thead>
+                                <ul>
+                                    <tr>
+                                        {{#each head}}
+                                            <th>{{this}}</th>
+                                        {{/each}}
+                                    </tr>
+                                </ul>
+                            </thead>
+                            <tbody>
+                                {{#each body}}
+                                    <tr>
+                                        <th>{{[0]}}</th>
+                                        <td>{{[1]}}</td>
+                                        <td>{{[2]}}</td>
+                                    </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    {{/with}}
+                </div>
+                <div class="col-12">
+                    {{#with param}}
+                    <div class="card">
+                         <div class="card-header">
+                            <span>{{title}}</span>
+                         </div>
+                         <div class="card-body p-0">
+                            <ul class="list-group">
+                                {{#each list}}
+                                    <li class="list-group-item">
+                                        {{this}}
+                                    </li>
+                                {{/each}}
+                            </ul>
+                         </div>
+                        </div>
+                    </div>
+                    {{/with}}
+                </div>
+                {{#with alert}}
+                <div class="col-12 mt-3">
+                    <div class="alert {{#if isError}} alert-danger {{/if}}">
+                        {{text}}
+                    </div>
+                </div>
+                {{/with}}
+            </div>
+           
+        </div>
+        <div class="col-12 mt-3 mb-5">
+            <ul class="ps-0">
+                <div class="row card">
+                    <div class="col-7">
+                        <div class="row">
+                            {{#each actionList}}
+                                <div class="col-3 py-2"> 
+                                    <button class="ms-1 btn {{#if isWarning}} btn-warning {{/if}} {{#if isError}} btn-outline-danger {{/if}} {{#if isSuccess}} btn-success {{/if}} {{#if isGood}} btn-outline-success {{/if}}">{{name}}</button>
+                                </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+    {{/with}}
+
+    <hr class="my-5">
+
+    {{#with goodsOtherBlock}}
+    <div>
+        <h3 class="text-center">{{title}}</h3>
+        <div class="row">
+            {{#with cards}}
+                <div class="col-4">
+                    {{> goods-card cardName=[0] }}
+                </div>
+                <div class="col-4">
+                    {{> goods-card cardName=[1] }}
+                </div>
+                <div class="col-4">
+                    {{> goods-card cardName=[2] }}
+                </div>
+            {{/with}}
+        </div>
+    </div>
+    {{/with}}
+
+    
+
+</main>

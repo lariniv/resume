@@ -1,0 +1,26 @@
+<header>
+    <div class="card mt-5">
+        <div class="row pe-0">
+            {{#with navigation}}
+                <div class="col-7 ms-3 mb-2 ">
+                    <h1>{{Logo}}</h1>
+                </div>      
+                
+                <div class="nav col-4 pt-2">
+                    <div class="nav-item">
+                        <a href="{{links.[0].href}}" class="nav-link">{{links.[0].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{links.[1].href}}" class="nav-link">{{links.[1].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{links.[2].href}}" class="nav-link">{{links.[2].text}}</a>
+                    </div>
+                    <div class="nav-item pe-0">
+                        <a href="#" class="nav-link disabled">{{Logo}}</a>
+                    </div>
+                </div>
+            {{/with}}  
+        </div>
+     </div>
+</header>
