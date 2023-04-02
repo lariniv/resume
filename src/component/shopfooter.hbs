@@ -1,0 +1,22 @@
+<footer>
+    <ul>
+        <div class="row">
+            {{#each footer}}
+                <div class="nav flex-column col-2 me-2">
+                    <div class="nav-item">
+                        <a href="{{[0].link}}" class="nav-link">{{[0].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{[1].link}}" class="nav-link">{{[1].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{[2].link}}" class="nav-link">{{[2].text}}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="{{[3].link}}" class="nav-link disabled">{{[3].text}}</a>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </ul>
+</footer>
