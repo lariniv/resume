@@ -1,0 +1,16 @@
+<div class="breadcrumb my-5">
+        {{#with breadcrumb}}
+            <div class="breadcrumb-item ms-4">
+                <a href="{{[0].url}}">{{[0].name}}</a>
+            </div>
+            <div class="breadcrumb-item">
+                <a href="{{[1].url}}">{{[1].name}}</a>
+            </div>
+            <div class="breadcrumb-item">
+                <a href="{{[2].url}}">{{[2].name}}</a>
+            </div>
+            <div class="breadcrumb-item">
+                {{[3].name}}
+            </div>
+        {{/with}}
+    </div>
