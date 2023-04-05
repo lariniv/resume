@@ -1,0 +1,37 @@
+{{#with cardName}}
+<div class="col-12 card">
+    <div class="row m-3 mb-1">
+        <div class="col-2">
+            <img src="{{image}}">
+        </div>
+        <div class="col-4">
+            <div>
+                <h4>{{name}}</h4>
+            </div>
+            <div>
+                {{description}}
+            </div>
+        </div>
+        {{#with price}}
+        <div class="col-2 mt-3">
+            <div>
+                {{title}}:
+            </div>
+            <div>
+                <span class="display-6">{{value}}</span>
+            </div>
+        </div>
+        {{/with}}
+        <div class="col-2 text-center mt-5">
+            <div>{{amount}}</div>
+        </div>
+        <ul class="col-2 row mt-1">
+            {{#each buttons}}
+            <div class="col-12 mb-3">
+                <button class="btn {{#if isPrimary}} btn-primary {{/if}} {{#if isDanger}} btn-outline-danger {{/if}}">{{text}}</button>
+            </div>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+{{/with}}
