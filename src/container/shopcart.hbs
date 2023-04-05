@@ -1,0 +1,77 @@
+<main class="ms-1">
+    <div class="row">
+        {{#with header}}
+        <div class="col-9 mt-5">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="col-3 mt-5 text-end">
+            <a type="button" href="{{button.link}}" class="btn btn-outline-secondary">{{button.text}}</a>
+        </div>
+        {{/with}}
+
+        <hr class="my-5">
+
+        <div>
+            {{> cardGoodsItem cardName=goodsBlock.[0]}}
+        </div>
+        <div class="mt-3">
+            {{> cardGoodsItem cardName=goodsBlock.[1]}}
+        </div>
+        <div class="mt-3">
+            {{> cardGoodsItem cardName=goodsBlock.[2]}}
+        </div>
+        <div class="mt-3">
+            {{> cardGoodsItem cardName=goodsBlock.[3]}}
+        </div>
+
+        <hr class="my-5">
+
+        {{#with total}}
+        <div class="col-8">
+            <div>
+                <h2>{{title}}</h2>
+            </div>
+            <div class="my-3">
+                <h3>{{amount}}</h3>
+            </div>
+            <div>
+                {{delivery}}
+            </div>
+        </div>
+        <div class="col-4">
+            <ul class="row g-4">
+                {{#each buttons}}
+                <div class="col-12">
+                    <a type="button" href="{{link}}" class="btn {{#if isSuccess}} btn-success {{/if}} {{#if isOutline}} btn-outline-success {{/if}}">{{text}}</a>
+                </div>
+                {{/each}}
+            </ul>   
+        </div>
+        {{/with}}
+
+        <hr class="my-5">
+
+        {{#with goodsOtherBlock}}
+        <div>
+            <h3 class="text-center">{{title}}</h3>
+            <div class="row">
+                {{#with cards}}
+                    <div class="col-4">
+                        {{> goods-card cardName=[0] }}
+                    </div>
+                    <div class="col-4">
+                        {{> goods-card cardName=[1] }}
+                    </div>
+                    <div class="col-4">
+                        {{> goods-card cardName=[2] }}
+                    </div>
+                {{/with}}
+            </div>
+        </div>
+        {{/with}}
+
+        <hr class="my-5">
+
+       {{> subscribe}}
+    </div>
+</main>
