@@ -1,0 +1,191 @@
+<main class="ms-2">
+    <div class="row">
+        <h1 class="col-12 my-4">{{header}}</h1>
+
+        {{#with purchase}}
+            <div class="col-12">
+                <div class="nav nav-tabs">
+                    <ul class="row col-12 mb-0 ps-0">
+                        {{#each tabs}}
+                        <div class="col-3">
+                            <div class="nav-item">
+                                <a href="#" class="nav-link {{#if @first}} active {{/if}}">{{#if @first}} <b> {{/if}}{{this}}{{#if @first}} </b> {{/if}}</a>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            {{#with actionBlock}}
+            <div class="col-4 mt-3">
+                <input type="text" class="form-control" placeholder="{{input.placeholder}}">
+            </div>
+            <ul class="row col-8 mt-3">
+                {{#each buttons}}
+                <div {{#if @first}} class="col-2 pe-0" {{else}} class="px-0 col-3" {{/if}}> 
+                    <a type="button" href="{{link}}" class="btn {{#if isSuccess}} btn-success {{/if}} {{#if isOutline}} btn-outline-success {{/if}} {{#if isDanger}} btn-outline-danger {{/if}}">{{text}}</a>
+                </div>
+                {{/each}}
+            </ul>
+            {{/with}}
+
+            <hr class="my-5">
+            
+            <ul class="list-group">
+                {{#each itemList}}
+                    <li class="list-group-item">
+                        {{> purchaseItem item=this}}
+                    </li>
+                {{/each}}
+            </ul>
+        {{/with}}
+
+        <hr class="my-5">
+
+        {{#with userInfo}}
+        <h2 class="col-12 mb-5">{{title}}</h2>
+        {{#with profileData}}
+            <div class="col-12 card">
+                <div class="row ms-1">
+                    <h3 class="col-12 my-3 ps-0">{{title}}</h3>
+                    {{#with fullName}}
+                        <div class="col-4 my-3 ps-0">
+                            <div>
+                                <span>{{surname.title}}</span>
+                            </div>
+                            <div>
+                                <b>{{surname.value}}</b>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div>
+                                <span>{{name.title}}</span>
+                            </div>
+                            <div>
+                                <b>{{name.value}}</b>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div>
+                                <span>{{middleName.title}}</span>
+                            </div>
+                            <div>
+                                <b>{{middleName.value}}</b>
+                            </div>
+                        </div>
+                    {{/with}}
+                    {{#with otherInfo}}
+                        <div class="col-4 ps-0">
+                            <div>
+                                <span>{{birthday.title}}</span>
+                            </div>
+                            <div>
+                                <b>{{birthday.value}}</b>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div>
+                                <span>{{sex.title}}</span>
+                            </div>
+                            <div>
+                                <b>{{sex.value}}</b>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div>
+                                <span>{{language.title}}</span>
+                            </div>
+                            <div>
+                                <b>{{language.value}}</b>
+                            </div>
+                        </div>
+                    {{/with}}
+                    <ul class="col-12 mt-4">
+                        <div class="row">
+                            {{#each ../buttons}}
+                                <div class="col-4 {{#if @first}} ps-0 {{/if}}">
+                                    <a type="button" href="{{link}}" class="btn {{#if isPrimary}} btn-primary {{/if}} {{#if isSecondary}} btn-outline-secondary {{/if}} {{#if isDanger}} btn-outline-danger {{/if}}">{{text}}</a>
+                                </div>
+                            {{/each}}
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        {{/with}}
+
+        {{#with recipients}}
+            <div class="col-12 card mt-3">
+                <div class="row ms-1">
+                    <h3 class="col-12 ps-0 mb-4 mt-2">{{title}}</h3>
+                    <ul class="ps-0 col-12 row">
+                        {{#each users}}
+                            <div class="col-4">
+                                <div>
+                                    <b>{{name}}</b>
+                                </div>
+                                <div class="mt-1 mb-4">
+                                    <span>{{phone}}</span>
+                                </div>
+                                <div>
+                                    <a type="button" href="{{button.link}}" class="btn btn-primary">{{button.text}}</a>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        {{/with}}
+
+        {{#with contacts}}
+            <div class="col-12 card mt-3">
+                <div class="row ms-1">
+                    <h3 class="col-12 ps-0 mb-4 mt-2">{{title}}</h3>
+                    {{#with contactData}}
+                        {{#with phone}}
+                            <div class="col-4 ps-0">
+                                <div>
+                                    <span>{{title}}</span>
+                                </div>
+                                <div class="mt-1">
+                                    <b>{{value}}</b>
+                                </div>
+                            </div>
+                        {{/with}}
+                        {{#with additionalPhone}}
+                            <div class="col-4 ps-0">
+                                <div>
+                                    <span>{{title}}</span>
+                                </div>
+                                <div class="mt-1">
+                                    <b>{{value}}</b>
+                                </div>
+                            </div>
+                        {{/with}}
+                        {{#with email}}
+                            <div class="col-4 ps-0 mb-4">
+                                <div>
+                                    <span>{{title}}</span>
+                                </div>
+                                <div class="mt-1">
+                                    <b>{{value}}</b>
+                                </div>
+                            </div>
+                        {{/with}}
+                    {{/with}}
+
+                    <ul class="col-12">
+                        <div class="row">
+                            {{#each buttons}}
+                                <div class="col-4 px-0">
+                                    <a type="button" href="{{link}}" class="btn {{#if isPrimary}} btn-primary {{/if}} {{#if isSecondary}} btn-outline-secondary {{/if}} {{#if isDanger}} btn-outline-danger {{/if}}">{{text}}</a>
+                                </div>
+                            {{/each}}
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        {{/with}}
+
+        {{/with}}
+    </div>
+</main>

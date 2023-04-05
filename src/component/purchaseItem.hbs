@@ -1,0 +1,34 @@
+{{#with item}}
+    <div class="row">
+        <div class="col-4 mt-4">
+            <div class="mb-2">
+                <span>{{number}}</span>
+            </div>
+            <div>
+                <h5>{{status}}</h5>
+            </div>
+        </div>
+        {{#with amount}}
+        <div class="col-2 mt-4">
+            <div class="mb-2">
+                <span>{{title}}</span>
+            </div>
+            <div>
+                <h5>{{value}}</h5>
+            </div>
+        </div>
+        {{/with}}
+        <div class="col-4">
+            <ul class="ps-0">
+                {{#each images}}
+                    <img src="{{this}}" alt="pic">
+                {{/each}}
+            </ul>
+        </div>
+        {{#with button}}
+        <div class="col-2">
+            <a type="button" link="{{link}}" class="btn {{#if isPrimary}} btn-primary {{/if}}">{{text}}</a>
+        </div>
+        {{/with}}
+    </div>
+{{/with}}
