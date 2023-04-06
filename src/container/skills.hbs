@@ -2,11 +2,9 @@
 Це код container файлу для summary сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
-
-<div>
-    {{#with main}}
+{{#with main}}
     <main>
-        <section>
+        <div>
             {{> title data="All skills" big=true }}
             <ul>
                 {{#each skills}}
@@ -24,12 +22,11 @@
                     {{/if}}
                     {{/unless}}
 
-
                 </li>
                 {{/each}}
             </ul>
-        </section>
-        <section>
+        </div>
+        <div>
             {{> title data="My hobbies"}}
             <ol>
                 {{#each hobbies}}
@@ -41,10 +38,9 @@
                 </li>
                 {{/each}}
             </ol>
-        </section>
+        </div>
     </main>
-    {{/with}}
-</div>
+{{/with}}
 
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs

@@ -12,15 +12,10 @@
                     {{description}}
                 </div>
 
-                <br>
-                
-                <div>
+                <div class="my-3">
                     <em>{{#if elements}} Elements: {{/if}} {{#if properties}} Properties: {{/if}} {{#if functions}} Functions: {{/if}}</em>
                 </div>
 
-                <br>
-
-                
                 {{#if elements}}
                 <div>
                     <ul>
@@ -52,7 +47,7 @@
                 {{/if}}
             </li>
 
-            {{> spliter}}
+            <hr class="my-5">
             {{/each}}
         </ul>
     </main>

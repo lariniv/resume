@@ -1,411 +1,380 @@
-<div>
-    <main>
-        <section>
-            <h2> {{make}} {{model}}</h2>
+<main class="ms-2">
+    <section>
+        <h2> {{make}} {{model}}</h2>
 
-            <div>
-                <i>Color - {{color}}</i>
-            </div>
+        <div>
+            <i>Color - {{color}}</i>
+        </div>
 
-            <div>
-                <i>Date of issue - {{year}}</i>
-            </div>
-        </section>
+        <div>
+            <i>Date of issue - {{year}}</i>
+        </div>
+    </section>
 
-        {{> spliter}}
+    <hr class="my-5">
 
-        <section>
-            {{> title data="Features"}}
+    <section>
+        {{> title data="Features"}}
 
-            <br>
+        {{#with features}}
+            {{#with interior}}
+                <section class="mt-3">
+                    {{> title data="Interior"}}
 
-            {{#with features}}
-                {{#with interior}}
-                    <section>
-                        {{> title data="Interior"}}
+                    <hr class="my-5">
 
-                        {{> spliter}}
-
-                        {{#with seats}}
-                            <div>
-                                <div>
-                                    <b>Seats</b>
-                                </div>
-                                
-                                <br>
-                                
-                                <ul>
-                                    <li>
-                                        Material - <b>{{material}}</b>
-                                    </li>
-
-                                    <li>
-                                        Color - <b>{{color}}</b>
-                                    </li>
-
-                                    {{#if heated}}
-                                        <li>
-                                            Heating <b>included</b>
-                                        </li>
-                                    {{/if}}
-
-                                    {{#if ventilated}}
-                                        <li>
-                                            Ventilation <b>included</b>
-                                        </li>
-                                    {{/if}}
-                                </ul>
-                            </div>
-                        {{/with}}
-
-                        {{> spliter}}
-
-                        {{#with dashboard}}
-                            <div>
-                                <div>
-                                    <b>Dashboard</b>
-                                </div>
-                                
-                                <br>
-                                
-                                <ul>
-                                    <li>
-                                        Material - <b>{{material}}</b>
-                                    </li>
-
-                                    <li>
-                                        Color - <b>{{color}}</b>
-                                    </li>
-
-                                    {{#with display}}
-                                        <li>
-                                            <b>Display :</b>
-
-                                            <ul>
-                                                <li>Type - <b>{{type}}</b></li>
-                                                <li>Size - <b>{{size}}</b></li>
-                                                <li>Resolution - <b>{{resolution}}</b></li>
-                                                
-                                                {{#if touchscreen}}
-                                                    <li>Supports <b>touchscreen technology</b></li>
-                                                {{/if}}
-                                            </ul>
-                                        </li>
-                                    {{/with}}
-                                </ul>
-                            </div>
-                        {{/with}}
-
-                        {{> spliter}}
-
-                        {{#with audio}}
-                            <div>
-                                <div>
-                                    <b>Audio</b>
-                                </div>
-                                
-                                <br>
-                                
-                                <ul>
-                                    <li>
-                                            System - <b>{{system}}</b>
-                                    </li>
-                                    <li>
-                                            Speakers amount - <b>{{speakers}}</b>
-                                    </li>
-                                    {{#if subwoofer}}
-                                        <li>
-                                            Includes <b>subwoofer</b>
-                                        </li>
-                                    {{/if}}
-
-                                    {{#if bluetooth}}
-                                        <li>
-                                            Supports <b>bluetooth</b>
-                                        </li>
-                                    {{/if}}
-
-                                    {{#if USB}}
-                                        <li>
-                                            Supports <b>USB</b>
-                                        </li>
-                                    {{/if}}
-                                </ul>
-                            </div>
-                        {{/with}}
-                    </section>
-                {{/with}}
-
-                {{> spliter}}
-
-                {{#with exterior}}
-                    <section>
-                        {{> title data="Exterior"}}
-
-                        <br>
-
-                        {{#with wheels}}
-                            <div>
-                                <div>
-                                    <b>Wheels</b>
-                                </div>
-
-                                <br>
-
-                                <ul>
-                                    <li>
-                                        Size - <b>{{size}}</b>
-                                    </li>
-                                    <li>
-                                        Type - <b>{{type}}</b>
-                                    </li>
-                                    <li>
-                                        Color - <b>{{color}}</b>
-                                    </li>
-                                </ul>
-                            </div> 
-                        {{/with}}
-
-                        {{> spliter}}
-
-                        {{#with headlights}}
-                            <div>
-                                <div>
-                                    <b>Headlights</b>
-                                </div>
-
-                                <br>
-
-                                <ul>
-                                    <li>
-                                        Headlights - <b>{{type}}</b>
-                                    </li>
-                                    <li>
-                                        Brightness - <b>{{brightness}}</b>
-                                    </li>
-                                    {{#if automatic}}
-                                        <li>
-                                            Are - <b>automatic</b>
-                                        </li>
-                                    {{/if}}
-                                </ul>
-                            </div>
-                        {{/with}}
-
-                        {{> spliter}}
-
-                        {{#with sunroof}}
-                            <div>
-                                <div>
-                                    <b>Sunroof</b>
-                                </div>
-
-                                <br>
-
-                                <ul>
-                                    <li>
-                                        Roof type - <b>{{type}}</b>
-                                    </li>
-                                    <li>
-                                        Roof size - <b>{{size}}</b>
-                                    </li>
-                                    {{#if automatic}}
-                                        <li>
-                                            Is - <b>automatic</b>
-                                        </li>
-                                    {{/if}}
-                                </ul>
-                            </div>
-                        {{/with}}
-                    </section>
-                {{/with}}
-
-                {{> spliter}}
-
-                {{#with safety}}
-                    <section>
-                        {{> title data="Safety"}}
-
-                        <br>
-
-                        {{#with airbags}}
-                            <div>
-                                <div>
-                                    <b>Airbags</b>
-                                </div>  
-
-                                <br>
-
-                                <ul>
-                                    <li>
-                                        Front airabags amount - <b>{{front}}</b>
-                                    </li>
-                                    <li>
-                                        Side airabags amount - <b>{{side}}</b>
-                                    </li>
-                                    <li>
-                                        Knee airabags amount - <b>{{knee}}</b>
-                                    </li>
-                                    <li>
-                                        Rear airabags amount - <b>{{rear}}</b>
-                                    </li>
-                                </ul>
-                            </div>
-                        {{/with}}
-
-                        {{> spliter}}
-
-                        {{#with assistance}}
-                            <div>
-                                <div>
-                                    <b>Assistance</b>
-                                </div>  
-
-                                <br>
-
-                                <ul>
-                                    {{#if blind_spot_monitoring}}
-                                        <li>
-                                            Supports <b>blind spot monitoring</b> technology
-                                        </li>
-                                    {{/if}}
-
-                                    {{#if rear_cross_traffic_alert}}
-                                        <li>
-                                            Supports <b> rear cross traffic alert</b> technology
-                                        </li>
-                                    {{/if}}
-
-                                    {{#if lane_departure_warning}}
-                                        <li>
-                                            Supports <b>lane departure warning</b> technology
-                                        </li>
-                                    {{/if}}
-
-                                    {{#if adaptive_cruise_control}}
-                                        <li>
-                                            Supports <b>adaptive cruise control</b> technology
-                                        </li>
-                                    {{/if}}
-
-                                    {{#if acollision_warning}}
-                                        <li>
-                                            Supports <b>collision warning</b> technology
-                                        </li>
-                                    {{/if}}
-                                </ul>
-                            </div>
-                        {{/with}}
-                    </section>
-                {{/with}}
-            {{/with}}
-        </section>
-
-        {{> spliter}}
-
-        <section>
-            {{> title data="Engine and price"}}
-
-            <br>
-
-            {{#with engine}}
-                <section>
-                    <div>
+                    {{#with seats}}
                         <div>
-                            <b>Engine</b>
+                            <div>
+                                <b>Seats</b>
+                            </div>
+                            
+                            <ul class="mt-3">
+                                <li>
+                                    Material - <b>{{material}}</b>
+                                </li>
+
+                                <li>
+                                    Color - <b>{{color}}</b>
+                                </li>
+
+                                {{#if heated}}
+                                    <li>
+                                        Heating <b>included</b>
+                                    </li>
+                                {{/if}}
+
+                                {{#if ventilated}}
+                                    <li>
+                                        Ventilation <b>included</b>
+                                    </li>
+                                {{/if}}
+                            </ul>
                         </div>
+                    {{/with}}
 
-                        <br>
+                    <hr class="my-5">
 
-                        <ul>
-                            <li>
-                                Engine type - <b>{{type}}</b>
-                            </li>
-                            <li>
-                                Displacement - <b>{{displacement}}</b>
-                            </li>
-                            <li>
-                                Horsepower - <b>{{horsepower}}</b>
-                            </li>
-                            <li>
-                                Torque - <b>{{torque}}</b>
-                            </li>
-                            <li>
-                                Transmission type - <b>{{transmission.type}}</b>
-                            </li>
-                            <li>
-                                Transmission gears amount - <b>{{transmission.gears}}</b>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-            {{/with}}
-
-            {{> spliter}}
-
-            {{#with fuel_economy}}
-                <section>
-                    <div>
+                    {{#with dashboard}}
                         <div>
-                            <b>Fuel</b>
-                        </div>
+                            <div>
+                                <b>Dashboard</b>
+                            </div>
+                            
+                            <ul class="mt-3">
+                                <li>
+                                    Material - <b>{{material}}</b>
+                                </li>
 
-                        <br>
+                                <li>
+                                    Color - <b>{{color}}</b>
+                                </li>
 
-                        <ul>
-                            <li>
-                                Fuel consumption (city) - <b>{{city}}</b>
-                            </li>
-                            <li>
-                                Fuel consumption (highway) - <b>{{highway}}</b>
-                            </li>
-                            <li>
-                                Fuel consumption (combined) - <b>{{combined}}</b>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-            {{/with}}
+                                {{#with display}}
+                                    <li>
+                                        <b>Display :</b>
 
-            {{> spliter}}
-
-            {{#with price}}
-                <section>
-                    <div>
-                        <div>
-                            <b>Price</b>
-                        </div>
-
-                        <br>
-
-                        <ul>
-                            <li>
-                                Base price - <b>{{base}}$</b>
-                            </li>
-                            <li>
-                                Destination price - <b>{{destination}}$</b>
-                            </li>
-                            <li>
-                                <div>
-                                    Optionary :
-                                </div> 
-                                {{#with options}}
-                                    <div>
                                         <ul>
-                                            <li>Navigation - <b>{{navigation}}$</b></li>
-                                            <li>Moonroof - <b>{{moonroof}}$</b></li>
-                                            <li>Premuim paint - <b>{{premium_paint}}$</b></li>
+                                            <li>Type - <b>{{type}}</b></li>
+                                            <li>Size - <b>{{size}}</b></li>
+                                            <li>Resolution - <b>{{resolution}}</b></li>
+                                            
+                                            {{#if touchscreen}}
+                                                <li>Supports <b>touchscreen technology</b></li>
+                                            {{/if}}
                                         </ul>
-                                    </div> 
+                                    </li>
                                 {{/with}}
-                            </li>
-                            <li>
-                                Total price - <b>{{total}}$</b>
-                            </li>
-                        </ul>
-                    </div>
+                            </ul>
+                        </div>
+                    {{/with}}
+
+                    <hr class="my-5">
+
+                    {{#with audio}}
+                        <div>
+                            <div>
+                                <b>Audio</b>
+                            </div>
+                            
+                            <ul class="mt-3">
+                                <li>
+                                        System - <b>{{system}}</b>
+                                </li>
+                                <li>
+                                        Speakers amount - <b>{{speakers}}</b>
+                                </li>
+                                {{#if subwoofer}}
+                                    <li>
+                                        Includes <b>subwoofer</b>
+                                    </li>
+                                {{/if}}
+
+                                {{#if bluetooth}}
+                                    <li>
+                                        Supports <b>bluetooth</b>
+                                    </li>
+                                {{/if}}
+
+                                {{#if USB}}
+                                    <li>
+                                        Supports <b>USB</b>
+                                    </li>
+                                {{/if}}
+                            </ul>
+                        </div>
+                    {{/with}}
                 </section>
             {{/with}}
-        </section>
-    </main>
-</div>
+
+            <hr class="my-5">
+
+            {{#with exterior}}
+                <section>
+                    {{> title data="Exterior"}}
+
+
+                    {{#with wheels}}
+                        <div class="mt-3">
+                            <div>
+                                <b>Wheels</b>
+                            </div>
+
+                            <ul class="mt-3">
+                                <li>
+                                    Size - <b>{{size}}</b>
+                                </li>
+                                <li>
+                                    Type - <b>{{type}}</b>
+                                </li>
+                                <li>
+                                    Color - <b>{{color}}</b>
+                                </li>
+                            </ul>
+                        </div> 
+                    {{/with}}
+
+                    <hr class="my-5">
+
+                    {{#with headlights}}
+                        <div>
+                            <div>
+                                <b>Headlights</b>
+                            </div>
+
+                            <ul class="mt-3">
+                                <li>
+                                    Headlights - <b>{{type}}</b>
+                                </li>
+                                <li>
+                                    Brightness - <b>{{brightness}}</b>
+                                </li>
+                                {{#if automatic}}
+                                    <li>
+                                        Are - <b>automatic</b>
+                                    </li>
+                                {{/if}}
+                            </ul>
+                        </div>
+                    {{/with}}
+
+                    <hr class="my-5">
+
+                    {{#with sunroof}}
+                        <div>
+                            <div>
+                                <b>Sunroof</b>
+                            </div>
+
+                            <ul class="mt-3">
+                                <li>
+                                    Roof type - <b>{{type}}</b>
+                                </li>
+                                <li>
+                                    Roof size - <b>{{size}}</b>
+                                </li>
+                                {{#if automatic}}
+                                    <li>
+                                        Is - <b>automatic</b>
+                                    </li>
+                                {{/if}}
+                            </ul>
+                        </div>
+                    {{/with}}
+                </section>
+            {{/with}}
+
+            <hr class="my-5">
+
+            {{#with safety}}
+                <section>
+                    {{> title data="Safety"}}
+
+                    {{#with airbags}}
+                        <div class="mt-3">
+                            <div>
+                                <b>Airbags</b>
+                            </div>  
+
+                            <ul class="mt-3">
+                                <li>
+                                    Front airabags amount - <b>{{front}}</b>
+                                </li>
+                                <li>
+                                    Side airabags amount - <b>{{side}}</b>
+                                </li>
+                                <li>
+                                    Knee airabags amount - <b>{{knee}}</b>
+                                </li>
+                                <li>
+                                    Rear airabags amount - <b>{{rear}}</b>
+                                </li>
+                            </ul>
+                        </div>
+                    {{/with}}
+
+                    <hr class="my-5">
+
+                    {{#with assistance}}
+                        <div>
+                            <div>
+                                <b>Assistance</b>
+                            </div>  
+
+                            <ul class="mt-3">
+                                {{#if blind_spot_monitoring}}
+                                    <li>
+                                        Supports <b>blind spot monitoring</b> technology
+                                    </li>
+                                {{/if}}
+
+                                {{#if rear_cross_traffic_alert}}
+                                    <li>
+                                        Supports <b> rear cross traffic alert</b> technology
+                                    </li>
+                                {{/if}}
+
+                                {{#if lane_departure_warning}}
+                                    <li>
+                                        Supports <b>lane departure warning</b> technology
+                                    </li>
+                                {{/if}}
+
+                                {{#if adaptive_cruise_control}}
+                                    <li>
+                                        Supports <b>adaptive cruise control</b> technology
+                                    </li>
+                                {{/if}}
+
+                                {{#if acollision_warning}}
+                                    <li>
+                                        Supports <b>collision warning</b> technology
+                                    </li>
+                                {{/if}}
+                            </ul>
+                        </div>
+                    {{/with}}
+                </section>
+            {{/with}}
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+        {{> title data="Engine and price"}}
+
+        {{#with engine}}
+            <section class="mt-3">
+                <div>
+                    <div class="mb-3">
+                        <b>Engine</b>
+                    </div>
+
+                    <ul>
+                        <li>
+                            Engine type - <b>{{type}}</b>
+                        </li>
+                        <li>
+                            Displacement - <b>{{displacement}}</b>
+                        </li>
+                        <li>
+                            Horsepower - <b>{{horsepower}}</b>
+                        </li>
+                        <li>
+                            Torque - <b>{{torque}}</b>
+                        </li>
+                        <li>
+                            Transmission type - <b>{{transmission.type}}</b>
+                        </li>
+                        <li>
+                            Transmission gears amount - <b>{{transmission.gears}}</b>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        {{/with}}
+
+        <hr class="my-5">
+
+        {{#with fuel_economy}}
+            <section>
+                <div>
+                    <div>
+                        <b>Fuel</b>
+                    </div>
+
+                    <ul class="mt-3">
+                        <li>
+                            Fuel consumption (city) - <b>{{city}}</b>
+                        </li>
+                        <li>
+                            Fuel consumption (highway) - <b>{{highway}}</b>
+                        </li>
+                        <li>
+                            Fuel consumption (combined) - <b>{{combined}}</b>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        {{/with}}
+
+        <hr class="my-5">
+
+        {{#with price}}
+            <section>
+                <div>
+                    <div>
+                        <b>Price</b>
+                    </div>
+
+                    <ul class="mt-3">
+                        <li>
+                            Base price - <b>{{base}}$</b>
+                        </li>
+                        <li>
+                            Destination price - <b>{{destination}}$</b>
+                        </li>
+                        <li>
+                            <div>
+                                Optionary :
+                            </div> 
+                            {{#with options}}
+                                <div>
+                                    <ul>
+                                        <li>Navigation - <b>{{navigation}}$</b></li>
+                                        <li>Moonroof - <b>{{moonroof}}$</b></li>
+                                        <li>Premuim paint - <b>{{premium_paint}}$</b></li>
+                                    </ul>
+                                </div> 
+                            {{/with}}
+                        </li>
+                        <li>
+                            Total price - <b>{{total}}$</b>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        {{/with}}
+    </section>
+</main>

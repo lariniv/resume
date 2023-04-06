@@ -1,169 +1,137 @@
-<div>
-    {{#with program}}
-        <main>
-            {{#with excursion}}
-                <section>
-                    {{> title data=name big=true}}
-
-                    <br>
-                    
-                    <div>
-
-                        {{#with location}}
-                            <div>
-                                <em>{{country}} - {{city}}</em>
-                            </div>
-                        {{/with}}
-
-                        <div>
-                            <i>{{date}}</i>
-                        </div>
-
-                    </div>
+{{#with program}}
+    <main class="ms-2">
+        {{#with excursion}}
+            <div>
+                {{> title data=name big=true}}
                 
-                </section>
+                <div class="mt-3">
+                    {{#with location}}
+                        <div>
+                            <em>{{country}} - {{city}}</em>
+                        </div>
+                    {{/with}}
+                    <div>
+                        <i>{{date}}</i>
+                    </div>
+                </div>
+            </div>
 
-                {{> spliter}}
+            <hr class="my-5">
 
-                <section>
-                    {{> title data="Program"}}
+            <div>
+                {{> title data="Program"}}
 
-                    {{> spliter}}
+                <hr class="my-5">
 
-                    <ul>
-                        {{#each program}}
-                            <li>
-                                <div>
-                                    Program name - <em>{{name}}</em>
-                                </div>
+                <ul>
+                    {{#each program}}
+                        <li>
+                            <div>
+                                Program name - <em>{{name}}</em>
+                            </div>
+                            <div>
+                                Program type - <em>{{type}}</em>
+                            </div>
+                            <div>
+                                Program duration - <em>{{duration}} day(s)</em>
+                            </div>
 
-                                <div>
-                                    Program type - <em>{{type}}</em>
-                                </div>
+                            <div class="mt-3">
+                                {{#with details}}
+                                    {{#if museum}}
+                                        <div>
+                                            <strong>{{museum.name}}</strong>
+                                        </div>
 
-                                <div>
-                                    Program duration - <em>{{duration}} day(s)</em>
-                                </div>
-
-                                <br>
-
-                                <div>
-                                    {{#with details}}
-
-                                        {{#if museum}}
-                                           
-                                            <div>
-                                                <strong>{{museum.name}}</strong>
-                                            </div>
-
-                                            <section>
-                                                {{#with museum}}
-                                                    {{#with location}}
-                                                        <div>
-                                                            <address>Location: {{country}}, {{city}}, {{address}}</address>
-                                                        </div>
-                                                    {{/with}}
-                                                        
-
-                                                    <br>
-
+                                        <div>
+                                            {{#with museum}}
+                                                {{#with location}}
                                                     <div>
-
-                                                        <div>
-                                                            <i>Exhibits:</i>
-                                                        </div>
-                                                        <ul>
-                                                            {{#each exhibits}}
-                                                                <li>
-                                                                    <div>
-                                                                        <em>{{name}} {{#if artist}} - {{artist}} {{/if}}</em>
-                                                                    </div>
-
-                                                                    <div>
-                                                                        <small>{{description}}</small>
-                                                                    </div>
-
-                                                                    <br>
-
-                                                                    <div>
-                                                                        {{#if audio_guide}}
-                                                                            Audio guide is present!
-                                                                        {{/if}}
-                                                                    </div>
-                                                                </li>
-                                                                <br>
-
-                                                            {{/each}}
-                                                        </ul>
+                                                        <address>Location: {{country}}, {{city}}, {{address}}</address>
                                                     </div>
                                                 {{/with}}
 
-                                                <br>
-
-                                                <div>
-                                                    {{#with guide}}
+                                                <div class="mt-3">
                                                     <div>
-                                                        <em>Guide: {{name}}(language - {{language}}), {{rating}}</em>
+                                                        <i>Exhibits:</i>
                                                     </div>
-                                                    {{/with}}
+
+                                                    <ul>
+                                                        {{#each exhibits}}
+                                                            <li {{#unless @last}} class="mt-3" {{/unless}}>
+                                                                <div>
+                                                                    <em>{{name}} {{#if artist}} - {{artist}} {{/if}}</em>
+                                                                </div>
+
+                                                                <div>
+                                                                    <small>{{description}}</small>
+                                                                </div>
+
+                                                                <div class="mt-3">
+                                                                    {{#if audio_guide}}
+                                                                        Audio guide is present!
+                                                                    {{/if}}
+                                                                </div>
+                                                            </li>
+                                                        {{/each}}
+                                                    </ul>
                                                 </div>
-                                                
-                                            </section>
+                                            {{/with}}
 
-                                        {{else}}
+                                            <div class="mt-3">
+                                                {{#with guide}}
+                                                <div>
+                                                    <em>Guide: {{name}}(language - {{language}}), {{rating}}</em>
+                                                </div>
+                                                {{/with}}
+                                            </div>
+                                        </div>
 
-                                            <div>
-                                                <strong>{{venue.name}}</strong>
+                                    {{else}}
+
+                                        <div>
+                                            <strong>{{venue.name}}</strong>
+                                        </div>
+
+                                        <div>
+                                            {{#with venue}}
+                                                {{#with location}}
+                                                    <div>
+                                                        <address>Location: {{country}}, {{city}}, {{address}}</address>
+                                                    </div>
+                                                {{/with}}
+                                            {{/with}}
+
+                                            <div class="mt-3">
+                                                <em>Performers:</em>
                                             </div>
 
-                                            <section>
-                                                {{#with venue}}
-                                                    {{#with location}}
+                                            <ul>
+                                                {{#each performers}}
+                                                    <li>
                                                         <div>
-                                                            <address>Location: {{country}}, {{city}}, {{address}}</address>
+                                                            <i> {{name}} - {{type}}</i>
                                                         </div>
-                                                    {{/with}}
+                                                    </li>
+                                                {{/each}}
+                                            </ul>
+
+                                            <div class="mt-3">
+                                                {{#with guide}}
+                                                <div>
+                                                    <em>Guide: {{name}}(language - {{language}}), {{rating}}</em>
+                                                </div>
                                                 {{/with}}
-
-                                                <br>
-
-                                                <div>
-                                                    <em>Performers:</em>
-                                                </div>
-
-                                                <ul>
-                                                    {{#each performers}}
-                                                        <li>
-                                                            <div>
-                                                                <i> {{name}} - {{type}}</i>
-                                                            </div>
-                                                        </li>
-                                                    {{/each}}
-                                                </ul>
-
-                                                <br>
-
-                                                <div>
-                                                    {{#with guide}}
-                                                    <div>
-                                                        <em>Guide: {{name}}(language - {{language}}), {{rating}}</em>
-                                                    </div>
-                                                    {{/with}}
-                                                </div>
-                                            </section>    
-                                        {{/if}}
-                                    {{/with}}
-                                </div>
-
-                               
-                            </li>
-
-                            {{> spliter}}
-                        {{/each}}
-                    </ul>
-                    
-                </section>
-            {{/with}}
-        </main>
-    {{/with}}
-</div>
+                                            </div>
+                                        </div>    
+                                    {{/if}}
+                                {{/with}}
+                            </div>
+                        </li>
+                        <hr class="my-5">
+                    {{/each}}
+                </ul>
+            </div>
+        {{/with}}
+    </main>
+{{/with}}
