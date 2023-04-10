@@ -1,0 +1,76 @@
+<main class="ms-1">
+    {{> breadcrumb}}
+
+    <div class="row">
+        <h1 class="col-12 my-5">{{header}}</h1>
+        <div class="col-9 row mb-5">
+            {{#each sortBlock}}
+                <div class="col-3">
+                    <select class="form-select">
+                        <option selected>{{placeholder}}</option>
+                        {{#each options}}
+                        <option value="{{value}}">{{text}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            {{/each}}
+        </div>
+        {{#with filterBlock}}
+            <div class="col-4 card">
+                <div class="form-label m-2">{{sellers.title}}</div>
+                {{#each sellers.list}}
+                    <div class="form-check ms-2">
+                        <label class="from-label">{{value}}</label>
+                        <input type="checkbox" class="form-check-input">
+                    </div>
+                {{/each}}
+
+                <hr class="my-2">
+
+                {{#with brands}}
+                    <div class="form-label ms-2 mb-2">{{title}}</div>
+                    <input type="text" class="form-control ms-2" placeholder="{{input.placeholder}}">
+                    {{#each options}}
+                        <div class="form-check ms-2">
+                            <label class="from-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                    {{/each}}
+                {{/with}}
+
+                <hr class="my-2">
+
+                {{#with price}} 
+                <div class="form-label ms-2 mb-2">{{title}}</div>
+                <input type="number" class="form-control mb-2 ms-2" min="8000" placeholder="{{range.from}}">
+                <input type="number" class="form-control ms-2" max="30000" placeholder="{{range.to}}">
+                <div class="mb-2">
+                    <a type="button" class="btn btn-outline-secondary ms-2 mt-2" href="{{button.link}}">{{button.text}}</a>
+                </div>
+                {{/with}}
+
+                <hr class="my-2">
+
+                {{#each filterList}}
+                    <div class="form-label ms-2 mt-2">{{title}}</div>
+                    {{#each options}}
+                        <div class="form-check ms-2">
+                            <label class="form-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                    {{/each}}
+                    {{#unless @last}}
+                    <hr class="my-2">
+                    {{/unless}}
+                {{/each}}
+            </div>
+        {{/with}}
+        <div class="col-8 row">
+            {{#each goodsList}}
+                <div class="col-6">
+                    {{> catalogitem card=this}}
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</main>

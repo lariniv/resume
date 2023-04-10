@@ -1,16 +1,13 @@
-<div class="breadcrumb my-5">
-        {{#with breadcrumb}}
-            <div class="breadcrumb-item ms-4">
-                <a href="{{[0].url}}">{{[0].name}}</a>
-            </div>
-            <div class="breadcrumb-item">
-                <a href="{{[1].url}}">{{[1].name}}</a>
-            </div>
-            <div class="breadcrumb-item">
-                <a href="{{[2].url}}">{{[2].name}}</a>
-            </div>
-            <div class="breadcrumb-item">
-                {{[3].name}}
-            </div>
-        {{/with}}
-    </div>
+<nav class="aria-label">
+    <ol class="breadcrumb my-5">
+        {{#each breadcrumb}}
+        <li class="breadcrumb-item active" aria-current="page">
+            {{#unless @last}}
+                <a href="{{url}}">{{name}}</a>
+            {{else}}
+                <span>{{name}}</span>
+            {{/unless}}
+        </li>
+        {{/each}}
+    </ol>
+</nav>
