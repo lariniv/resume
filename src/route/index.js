@@ -3379,7 +3379,7 @@ router.get('/shopcart', function (req, res) {
     })
     //                  ↑↑ сюди вводимо JSON дані
   })
-
+  
   router.get('/shopcatalog', function (req, res) {
     // res.render генерує нам HTML сторінку
   
