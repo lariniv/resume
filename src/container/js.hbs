@@ -1,90 +1,83 @@
-<div>
-    <main>
-        <section>
-            {{> title data=name big=true}}
+<main class="ms-2">
+    <div>
+        {{> title data=name big=true}}
 
-            <br>
-
-            <div>
-                <i>{{description}}</i>
+        <div class="my-3">
+            <i>{{description}}</i>
+        </div>
+    
+        <div>
+            <div class="mb-3">
+                <b>Creation:</b>
             </div>
-        
 
-            <br>
-
-            <div>
+            {{#with history}}
                 <div>
-                    <b>Creation:</b>
-                </div>
-
-                <br>
-
-                {{#with history}}
                     <div>
-                        <div>
-                            Year of creation - <b>{{year}}</b>
-                        </div>
-                        <div>
-                            Founded by - <b>{{founder}}</b>
-                        </div>
+                        Year of creation - <b>{{year}}</b>
                     </div>
-                {{/with}}
-            </div>
-        </section>
+                    <div>
+                        Founded by - <b>{{founder}}</b>
+                    </div>
+                </div>
+            {{/with}}
+        </div>
+    </div>
 
-        {{> spliter}}
+    <hr class="my-5">
 
-        {{> list-badge-section title="Types" listName=types}}
+    {{> list-badge-section title="Types" listName=types}}
 
-        {{> spliter}}
+    <hr class="my-5">
 
-        <section>
-            {{> title data="Syntax"}}
+    <div>
+        {{> title data="Syntax"}}
 
-            <br>
-
-            <div>
-                {{#with syntax}}
+        <div class="my-3">
+            {{#with syntax}}
+                <div>
                     {{> list listName=variables listTitle="Variables"}}
-                    <br>
+                </div>
+                <div class="my-3">
                     {{> list listName=functions listTitle="Functions"}}
-                    <br>
+                </div>
+                <div>
                     {{> list listName=conditionals listTitle="Conditionals"}}
-                    <br>
+                </div>
+                <div class="my-3">
                     {{> list listName=loops listTitle="Loops"}}
-                    <br>
+                </div>
+                <div>
                     {{> list listName=classes listTitle="Classes"}}
-                {{/with}}
-            </div>
-        </section>
+                </div>
+            {{/with}}
+        </div>
+    </div>
 
-        {{> spliter}}
+    <hr class="my-5">
 
-        {{> list-badge-section title="Features" listName=features}}
+    {{> list-badge-section title="Features" listName=features}}
 
-        {{> spliter}}
+    <hr class="my-5">
 
-        {{> list-badge-section title="Libraries" listName=libraries}}
+    {{> list-badge-section title="Libraries" listName=libraries}}
 
-        {{> spliter}}
+    <hr class="my-5">
 
-        {{> list-badge-section title="Tools" listName=tools}}
+    {{> list-badge-section title="Tools" listName=tools}}
 
-        {{>spliter}}
+    <hr class="my-5">
 
-        <section>
-            {{> title data="Js-related websites"}}
-            
-            <ul>
-                 {{#each community}}
-                    <li>
-                        <div>
-                            {{name}} - {{type}}
-                        </div>
-                    </li>
-                {{/each}}
-            </ul>
-
-        </section>
-    </main>
-</div>
+    <div>
+        {{> title data="Js-related websites"}}
+        <ul>
+                {{#each community}}
+                <li>
+                    <div>
+                        {{name}} - {{type}}
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</main>
